@@ -27,11 +27,6 @@ public class RoleDAOImpl implements RoleDAO {
     return roles;
   }
 
-  public boolean createNewRole(Role role) {
-    int affectedRows = jdbcTemplate.update(QUERY_CREATE_NEW_ROLE, role.getName());
-    return (affectedRows == 1);
-  }
-
   public List<Role> getAllRoles() {
     List<Role> roleList = jdbcTemplate.query(QUERY_GET_ALL_ROLES, new RoleMapper());
 
